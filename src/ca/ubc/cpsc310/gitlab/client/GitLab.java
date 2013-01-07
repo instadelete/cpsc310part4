@@ -45,7 +45,17 @@ public class GitLab implements EntryPoint {
 	 */
 	public void onModuleLoad() {
 	
+
 		
+	}
+	
+	/**
+	 * Used to display users 
+	 * @param users
+	 */
+	public void displayUsers(List<IUser> users)
+	{
+
 		RootPanel.get("root").add(flexTable);
 		
 		flexTable.setText(0,0, "Name");
@@ -54,40 +64,6 @@ public class GitLab implements EntryPoint {
 		flexTable.setText(0,2, "Shopping Cart Size");
 		flexTable.setText(0,3, "Wish List Size");
 		flexTable.setStyleName("centered-table", true);
-		
-		List<IUser> users = new ArrayList<IUser>();
-		
-		IUser newUser = new User();
-		
-		newUser.setLanguage("EN");
-		newUser.setName("John Smith");
-		newUser.addItemToShoppingCart(new ProductItem());
-		newUser.addItemToShoppingCart(new ProductItem());
-		newUser.addItemToShoppingCart(new ProductItem());
-		
-		newUser.addItemToWishList(new ProductItem());
-		newUser.addItemToWishList(new ProductItem());
-		
-		
-		
-		users.add(newUser);
-		
-		
-		newUser = new User();
-		
-		newUser.setLanguage("FR");
-		newUser.setName("Jane Smith");
-		newUser.addItemToShoppingCart(new ProductItem());
-		
-		
-		newUser.addItemToWishList(new ProductItem());		
-		newUser.addItemToWishList(new ProductItem());
-		newUser.addItemToWishList(new ProductItem());
-		newUser.addItemToWishList(new ProductItem());
-		
-		
-		
-		users.add(newUser);
 		
 		for(int i=0; i < users.size(); i++)
 		{
@@ -110,6 +86,5 @@ public class GitLab implements EntryPoint {
 			
 			flexTable.setText(i+1,3,String.valueOf(user.getWishList().size()));
 		}
-
 	}
 }
