@@ -48,7 +48,7 @@ public class GitLab implements EntryPoint {
 
 
 	private final FlexTable flexTable = new FlexTable();
-
+>>>>WEfwef
 
 	final LoadUsersServiceAsync service = GWT.create(LoadUsersService.class);
 
